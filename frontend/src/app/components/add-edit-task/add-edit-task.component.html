@@ -1,0 +1,22 @@
+<div class="roww mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-info mb-3" style="max-width: 25rem;">
+            <div class="card-header text-center">ADD TASK</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addTask()">
+                    <input formControlName = "description" type="text" class="form-control mt-2" placeholder="Description">
+                    <input formControlName = "status" type="text" class="form-control mt-2" placeholder="status">
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-secondary">Cancel</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button [disabled]="form.invalid" type="submit" class="btn btn-primary">ADD</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>
+

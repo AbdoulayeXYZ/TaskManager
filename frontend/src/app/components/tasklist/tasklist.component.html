@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="title">
+        <h2>Task List</h2>
+        <button  type="button" class="btn btn-primary" routerLink="/add">Add Task</button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Task" class="table-active">
+                <td> {{ item.id }} </td>
+                <td> {{ item.description }} </td>
+                <td> {{ item.status }} </td>
+                <td>
+                    <button [routerLink]="['/edit',  item.id ]" type="button" class="btn btn-warning btn-sm">Edit</button>
+                    <button (click)="deleteTask(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
